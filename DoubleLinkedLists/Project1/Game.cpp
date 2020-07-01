@@ -50,6 +50,12 @@ void Game::initialisation()
 	InitWindow(screenWidth, screenHeight, "Double Linked List");
 
 	SetTargetFPS(60);
+
+	m_list.pushBack(rand() % 100);
+	m_list.pushBack(rand() % 100);
+	m_list.pushBack(rand() % 100);
+	m_list.pushBack(rand() % 100);
+	m_list.pushBack(rand() % 100);
 }
 
 //------------------------------

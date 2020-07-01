@@ -50,11 +50,11 @@ int main(int argc, char* argv[])
 	SetTargetFPS(60);
 
 	// Add this texture to the hash table
-	Texture2D texture = LoadTextureCached("D:/bulletBlue.png"); 
+	Texture2D texture = LoadTextureCached("./assets/bulletBlue.png"); 
 
 	// Load the texture again from the hash table
-	Texture2D texture1 = LoadTextureCached("D:/bulletBlue.png");
-	Texture2D texture2 = LoadTextureCached("D:/bulletBlue.png");
+	Texture2D texture1 = LoadTextureCached("./assets/bulletBlue.png");
+	Texture2D texture2 = LoadTextureCached("./assets/bulletBlue.png");
 	//--------------------------------------------------------------------------------------
 
 	// Main game loop

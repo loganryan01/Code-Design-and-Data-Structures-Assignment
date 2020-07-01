@@ -122,8 +122,12 @@ void DoubleLinkedList::insertBefore(node* specifiedNode, int value)
 	// Set the data to be the input value
 	newNode->data = value;
 
-	// Set the specified nodes prev nodes next pointing to the new node
-	specifiedNode->prev->next = newNode;
+	// If the specified node's does have a next node
+	if (specifiedNode->prev != nullptr)
+	{
+		// Set the specified nodes prev nodes next pointing to the new node
+		specifiedNode->prev->next = newNode;
+	}
 
 	// Set the new nodes next pointer pointing to the specified node
 	newNode->next = specifiedNode;
@@ -135,7 +139,7 @@ void DoubleLinkedList::insertBefore(node* specifiedNode, int value)
 	specifiedNode->prev = newNode;
 
 	// if node is to be inserted before first node
-	if (specifiedNode->prev == nullptr)
+	if (specifiedNode == m_front)
 	{
 		// Set it to be the front node
 		m_front = newNode;
@@ -159,8 +163,12 @@ void DoubleLinkedList::insertAfter(node* specifiedNode, int value)
 	// Set the data to be the input value
 	newNode->data = value;
 
-	// Set the iterators prev nodes next pointing to the new node
-	specifiedNode->next->prev = newNode;
+	// If the specified node does have a next node
+	if (specifiedNode->next != nullptr)
+	{
+		// Set the specified nodes prev nodes next pointing to the new node
+		specifiedNode->next->prev = newNode;
+	}
 
 	// Set the new nodes prev pointer pointing to the iterator
 	newNode->prev = specifiedNode;
@@ -172,7 +180,7 @@ void DoubleLinkedList::insertAfter(node* specifiedNode, int value)
 	specifiedNode->next = newNode;
 
 	// if node is to be inserted before last node
-	if (specifiedNode->next == nullptr)
+	if (specifiedNode == m_back)
 	{
 		// Set it to be the back node
 		m_back = newNode;
